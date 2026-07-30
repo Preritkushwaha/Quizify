@@ -1,0 +1,39 @@
+[2026-04-23T21:05:18.704Z] === STARTING OPENROUTER QUIZ GENERATION === 
+[2026-04-23T21:05:18.705Z] Parameters: {
+  "prompt": "React JS basics",
+  "difficulty": "Easy",
+  "numberOfQuestions": 2
+}
+[2026-04-23T21:05:18.706Z] ❌ OpenRouter API Error: {
+  "message": "OPENROUTER_API_KEY is not configured in .env"
+}
+[2026-04-23T21:05:18.706Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "React JS basics",
+  "difficulty": "Easy"
+}
+[2026-04-23T21:46:26.291Z] === STARTING OPENROUTER QUIZ GENERATION === 
+[2026-04-23T21:46:26.295Z] Parameters: {
+  "prompt": "DSA",
+  "difficulty": "Medium",
+  "numberOfQuestions": 10
+}
+[2026-04-23T21:46:26.308Z] ❌ OpenRouter API Error: {
+  "message": "OPENROUTER_API_KEY is not configured in .env"
+}
+[2026-04-23T21:46:26.337Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "DSA",
+  "difficulty": "Medium"
+}
+[2026-04-24T07:30:43.032Z] === STARTING OPENROUTER QUIZ GENERATION === 
+[2026-04-24T07:30:43.034Z] Parameters: {
+  "prompt": "DSA",
+  "difficulty": "Medium",
+  "numberOfQuestions": 10
+}
+[2026-04-24T07:30:43.035Z] ❌ OpenRouter API Error: {
+  "message": "OPENROUTER_API_KEY is not configured in .env"
+}
+[2026-04-24T07:30:43.036Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "DSA",
+  "difficulty": "Medium"
+}
