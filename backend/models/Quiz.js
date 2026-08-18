@@ -37,6 +37,11 @@ const quizSchema = new mongoose.Schema({
     enum: ['Easy', 'Medium', 'Hard'],
     default: 'Medium'
   },
+  type: {
+    type: String,
+    enum: ['standard', 'battle', '1v1'],
+    default: 'standard'
+  },
   questions: [questionSchema],
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,

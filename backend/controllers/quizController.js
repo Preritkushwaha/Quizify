@@ -1,13 +1,13 @@
 const Quiz = require('../models/Quiz');
 const User = require('../models/User');
 const Participant = require('../models/Participant');
-const { generateQuiz } = require('../config/openrouter');
+const { generateQuiz } = require('../config/gemini');
 const { generateShareCode } = require('../utils/generateShareCode');
 
 // Generate AI Quiz
 exports.generateAI = async (req, res) => {
   try {
-    const { topic, difficulty, numberOfQuestions } = req.body;
+    const { topic, difficulty, numberOfQuestions, type } = req.body;
     const userId = req.userId;
 
     if (!topic) {
@@ -44,6 +44,7 @@ exports.generateAI = async (req, res) => {
       description: `AI-generated quiz about ${topic} (${quizData.questions.length} questions)`,
       category: topic,
       difficulty: capitalizedDifficulty,
+      type: type || 'standard',
       questions: quizData.questions.map(q => ({
         text: q.question || 'Question',
         options: q.options || ['A', 'B', 'C', 'D'],
@@ -81,7 +82,7 @@ exports.generateAI = async (req, res) => {
 // Create quiz
 exports.create = async (req, res) => {
   try {
-    const { title, description, category, difficulty, questions } = req.body;
+    const { title, description, category, difficulty, questions, type } = req.body;
     const userId = req.userId;
 
     if (!title || !questions || questions.length === 0) {
@@ -102,6 +103,7 @@ exports.create = async (req, res) => {
       description,
       category,
       difficulty,
+      type: type || 'standard',
       questions,
       createdBy: userId,
       shareCode: generateShareCode(),
@@ -217,7 +219,11 @@ exports.joinQuiz = async (req, res) => {
       return res.status(404).json({ message: 'Quiz not found' });
     }
 
-    // Check if user limit reached (max 10 users)
+    // Check if user limit reached (max 10 users for standard/battle)
+    if (quiz.type === '1v1' && quiz.participants.length >= 2) {
+      return res.status(400).json({ message: '1v1 Challenge is full. Maximum 2 users allowed.' });
+    }
+    
     if (quiz.participants.length >= 10) {
       return res.status(400).json({ message: 'Quiz is full. Maximum 10 users allowed.' });
     }
@@ -303,6 +309,7 @@ exports.getQuizWithParticipants = async (req, res) => {
         description: quiz.description,
         category: quiz.category,
         difficulty: quiz.difficulty,
+        type: quiz.type,
         shareCode: quiz.shareCode,
         status: quiz.status,
         isAIGenerated: quiz.isAIGenerated,
@@ -346,6 +353,7 @@ exports.getByShareCode = async (req, res) => {
         description: quiz.description,
         category: quiz.category,
         difficulty: quiz.difficulty,
+        type: quiz.type,
         questions: quiz.questions.map(q => ({
           text: q.text,
           options: q.options,

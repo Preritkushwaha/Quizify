@@ -29,8 +29,7 @@ const SignupPage = () => {
         age: parseInt(formData.age),
         studyingIn: formData.studyingIn
       });
-      // Navigate to my-quizzes after successful signup
-      setTimeout(() => navigate('/my-quizzes'), 500);
+      // App.jsx will automatically redirect when user state updates
     } catch (err) {
       setError(err.message || 'Signup failed');
       setLoading(false);

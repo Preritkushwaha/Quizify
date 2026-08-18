@@ -29,6 +29,10 @@ module.exports = (io) => {
           p => p.userId?.toString() === userId || p.userName === userName
         );
 
+        if (!participantData && quiz.type === '1v1' && quiz.participants.length >= 2) {
+          return socket.emit('error', { message: '1v1 Challenge is full (Max 2 participants)' });
+        }
+
         if (!participantData) {
           participantData = {
             userId,

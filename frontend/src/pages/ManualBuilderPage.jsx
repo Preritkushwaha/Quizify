@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import { ArrowLeft, Plus, Trash2 } from 'lucide-react'
 import Navbar from '../components/Navbar'
@@ -8,6 +8,8 @@ import { quizAPI } from '../services/api'
 
 const ManualBuilderPage = () => {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const quizType = searchParams.get('type') || 'standard'
   const { user } = useAuth()
   const [quizTitle, setQuizTitle] = useState('')
   const [questions, setQuestions] = useState([])
@@ -55,6 +57,7 @@ const ManualBuilderPage = () => {
       console.log('🚀 Starting manual quiz creation...');
       const quizData = {
         title: quizTitle,
+        type: quizType,
         questions: questions.map(q => ({
           text: q.text,
           options: q.options,

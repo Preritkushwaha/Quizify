@@ -8,7 +8,7 @@ import { challengeAPI, quizAPI } from '../../services/api';
 const Challenge1v1Modal = ({ onClose }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [mode, setMode] = useState(''); // '' | 'create' | 'join'
+  const [mode, setMode] = useState(''); // '' | 'create' | 'choose-existing' | 'join'
   const [challengeId, setChallengeId] = useState('');
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [userQuizzes, setUserQuizzes] = useState([]);
@@ -17,7 +17,7 @@ const Challenge1v1Modal = ({ onClose }) => {
 
   // Fetch user's quizzes when create mode is accessed
   useEffect(() => {
-    if (mode === 'create' && user) {
+    if (mode === 'choose-existing' && user) {
       fetchUserQuizzes();
     }
   }, [mode, user]);
@@ -40,13 +40,7 @@ const Challenge1v1Modal = ({ onClose }) => {
     }
   };
 
-  const handleCreateChallenge = async () => {
-    if (!user) {
-      navigate('/login');
-      onClose();
-      return;
-    }
-
+  const handleSelectExistingQuiz = async () => {
     if (!selectedQuiz) {
       toast.error('Please select a quiz');
       return;
@@ -54,49 +48,54 @@ const Challenge1v1Modal = ({ onClose }) => {
 
     setLoading(true);
     try {
-      console.log('🚀 Creating challenge for quiz:', selectedQuiz._id);
-      const response = await challengeAPI.create({
-        quizId: selectedQuiz._id,
-      });
+      // Create a fresh duplicate of the quiz for the 1v1 challenge
+      const newQuizData = {
+        title: `1v1: ${selectedQuiz.title}`,
+        description: selectedQuiz.description || 'A 1v1 challenge',
+        difficulty: selectedQuiz.difficulty,
+        type: '1v1',
+        questions: selectedQuiz.questions.map(q => ({
+          text: q.text,
+          options: q.options,
+          correctAnswer: q.correctAnswer
+        }))
+      };
       
-      console.log('✅ Challenge created:', response);
-      toast.success('Challenge created! Code: ' + response.challenge.challengeCode);
+      const response = await quizAPI.create(newQuizData);
       
-      // Copy challenge code to clipboard
-      navigator.clipboard.writeText(response.challenge.challengeCode);
-      toast.success('Challenge code copied to clipboard!');
-      
-      console.log('📋 Navigating to challenge:', response.challenge.id);
+      toast.success('Challenge initialized!');
       onClose();
-      // Navigate after closing modal
       setTimeout(() => {
-        navigate(`/challenge/${response.challenge.id}`);
+        navigate(`/quiz-admin-dashboard/${response.quiz._id}`);
       }, 300);
     } catch (err) {
-      console.error('❌ Error creating challenge:', err);
-      toast.error(err.message || 'Failed to create challenge');
+      console.error('❌ Error updating quiz:', err);
+      toast.error(err.message || 'Failed to initialize challenge');
       setLoading(false);
     }
   };
 
   const handleJoinChallenge = async () => {
     if (!challengeId.trim()) {
-      toast.error('Please enter a valid challenge code');
+      toast.error('Please enter a valid URL or Share Code');
       return;
     }
 
     setLoading(true);
+    // Extract share code if it's a full URL
+    let shareCode = challengeId.trim();
     try {
-      const response = await challengeAPI.join(challengeId.trim());
-      toast.success('Joined challenge successfully!');
-      navigate(`/challenge/${response.challenge._id}`);
-      onClose();
-    } catch (err) {
-      console.error('Error joining challenge:', err);
-      toast.error(err.message || 'Failed to join challenge');
-    } finally {
-      setLoading(false);
+      if (shareCode.includes('http')) {
+        const urlObj = new URL(shareCode);
+        const pathParts = urlObj.pathname.split('/');
+        shareCode = pathParts[pathParts.length - 1];
+      }
+    } catch (e) {
+      // Not a URL, use as is
     }
+
+    onClose();
+    navigate(`/join/${shareCode}`);
   };
 
   return (
@@ -158,6 +157,37 @@ const Challenge1v1Modal = ({ onClose }) => {
             )}
           </div>
         ) : mode === 'create' ? (
+          // Create challenge selection
+          <div className="space-y-4">
+            <button
+              onClick={() => setMode('')}
+              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium mb-4 transition"
+            >
+              <ArrowLeft size={20} />
+              Back
+            </button>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Choose Creation Method</h3>
+            
+            <button
+              onClick={() => {
+                onClose();
+                navigate('/manual-builder?type=1v1');
+              }}
+              className="w-full p-4 border-2 border-blue-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all text-left group"
+            >
+              <h4 className="text-lg font-bold text-gray-900">Create New Quiz</h4>
+              <p className="text-sm text-gray-600">Build a fresh quiz for this challenge</p>
+            </button>
+
+            <button
+              onClick={() => setMode('choose-existing')}
+              className="w-full p-4 border-2 border-blue-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all text-left group"
+            >
+              <h4 className="text-lg font-bold text-gray-900">Choose from Existing</h4>
+              <p className="text-sm text-gray-600">Select a quiz you've already created</p>
+            </button>
+          </div>
+        ) : mode === 'choose-existing' ? (
           // Create challenge - quiz selection
           <div className="space-y-4">
             <button
@@ -209,11 +239,11 @@ const Challenge1v1Modal = ({ onClose }) => {
                 </div>
 
                 <button
-                  onClick={handleCreateChallenge}
+                  onClick={handleSelectExistingQuiz}
                   disabled={!selectedQuiz || loading}
                   className="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed mt-4"
                 >
-                  {loading ? 'Creating...' : 'Create Challenge'}
+                  {loading ? 'Initializing...' : 'Select Quiz'}
                 </button>
               </>
             ) : (
@@ -234,11 +264,11 @@ const Challenge1v1Modal = ({ onClose }) => {
             </button>
 
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Challenge Code
+              Challenge URL or Share Code
             </label>
             <input
               type="text"
-              placeholder="Enter challenge code (e.g., CH123456)"
+              placeholder="Paste URL or Code here"
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4 transition"
               value={challengeId}
               onChange={(e) => setChallengeId(e.target.value.toUpperCase())}

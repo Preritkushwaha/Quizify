@@ -36,13 +36,16 @@ export const AuthProvider = ({ children }) => {
               // Login to backend
               const response = await authAPI.login({
                 firebaseUid: firebaseUser.uid,
+                email: firebaseUser.email,
               })
 
               localStorage.setItem('token', response.token)
               setUser(response.user)
             } catch (error) {
               console.error('Auth error:', error)
-              // Don't show toast on initial load
+              if (error.response?.data?.message) {
+                toast.error(`Auth error: ${error.response.data.message}`);
+              }
               setUser(null)
             }
           } else {
@@ -87,7 +90,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password)
-      toast.success('Logged in successfully!')
+      // The backend login and redirection will be handled by onAuthStateChanged
     } catch (error) {
       console.error('Login error:', error)
       toast.error(error.message || 'Login failed')

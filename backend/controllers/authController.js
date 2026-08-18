@@ -81,13 +81,25 @@ exports.login = async (req, res) => {
     let user = await User.findOne({ firebaseUid });
     
     if (!user) {
-      // If user doesn't exist, create one (first login scenario)
-      user = await User.create({
-        firebaseUid,
-        email: email || 'unknown@firebase.com',
-        name: email ? email.split('@')[0] : 'User',
-      });
-      console.log('✅ New user created on first login:', user._id, email);
+      // Check by email if firebaseUid wasn't found
+      if (email) {
+        user = await User.findOne({ email });
+        if (user) {
+          user.firebaseUid = firebaseUid;
+          await user.save();
+          console.log('✅ Updated existing user with new Firebase UID:', user._id);
+        }
+      }
+
+      if (!user) {
+        // If user doesn't exist, create one (first login scenario)
+        user = await User.create({
+          firebaseUid,
+          email: email || 'unknown@firebase.com',
+          name: email ? email.split('@')[0] : 'User',
+        });
+        console.log('✅ New user created on first login:', user._id, email);
+      }
     }
 
     // Generate token

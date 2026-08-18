@@ -5,13 +5,20 @@ import { Sparkles, LogIn } from 'lucide-react';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, user, loading: authLoading } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Reset loading state if backend auth fails (user remains null)
+  React.useEffect(() => {
+    if (!authLoading && !user && loading) {
+      setLoading(false);
+    }
+  }, [authLoading, user]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,8 +27,7 @@ const LoginPage = () => {
 
     try {
       await login(formData.email, formData.password);
-      // Navigate to my-quizzes after successful login
-      setTimeout(() => navigate('/my-quizzes'), 500);
+      // App.jsx will automatically redirect when user state updates
     } catch (err) {
       setError(err.message || 'Login failed');
       setLoading(false);

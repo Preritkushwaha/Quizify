@@ -120,7 +120,7 @@ const generateQuiz = async (prompt, difficulty, numberOfQuestions = 10) => {
     log('📡 Initializing Gemini model: gemini-2.0-flash');
 
     const model = genAI.getGenerativeModel({ 
-      model: 'gemini-2.0-flash',
+      model: 'gemini-3.6-flash',
       generationConfig: {
         temperature: 0.7,
         topP: 0.95,

@@ -226,3 +226,117 @@
   "topic": "JAVA",
   "difficulty": "Medium"
 }
+[2026-08-17T20:37:02.385Z] === STARTING GEMINI QUIZ GENERATION === 
+[2026-08-17T20:37:02.386Z] Parameters: {
+  "prompt": "JavaScript Basics",
+  "difficulty": "Easy",
+  "numberOfQuestions": 2
+}
+[2026-08-17T20:37:02.386Z] ✅ API Key validated {
+  "length": 39
+}
+[2026-08-17T20:37:02.387Z] 📡 Initializing Gemini model: gemini-2.0-flash 
+[2026-08-17T20:37:02.387Z] 📤 Sending request to Gemini API... 
+[2026-08-17T20:37:02.912Z] ❌ Gemini API Error: {
+  "message": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements."
+}
+[2026-08-17T20:37:02.913Z] ⚠️ API FAILED: Using fallback quiz generation... 
+[2026-08-17T20:37:02.913Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "JavaScript Basics",
+  "difficulty": "Easy"
+}
+[2026-08-17T20:39:22.340Z] === STARTING GEMINI QUIZ GENERATION === 
+[2026-08-17T20:39:22.341Z] Parameters: {
+  "prompt": "JavaScript Basics",
+  "difficulty": "Easy",
+  "numberOfQuestions": 2
+}
+[2026-08-17T20:39:22.342Z] ✅ API Key validated {
+  "length": 39
+}
+[2026-08-17T20:39:22.342Z] 📡 Initializing Gemini model: gemini-2.0-flash 
+[2026-08-17T20:39:22.342Z] 📤 Sending request to Gemini API... 
+[2026-08-17T20:39:28.947Z] ✅ Response received from Gemini {
+  "length": 324
+}
+[2026-08-17T20:39:28.947Z] 🔍 Extracted JSON {
+  "preview": "{\"questions\":[{\"question\":\"What is the output of the following JavaScript code?\\n\\nconsole.log(typeof []);\",\"options\":[\"\\\"object\\\"\",\"\\\"array\\\"\",\"\\\"lis"
+}
+[2026-08-17T20:39:28.948Z] 📊 Received 2 questions from Gemini API 
+[2026-08-17T20:39:28.948Z] ✅ Generated 2 REAL AI questions from Gemini! 
+[2026-08-17T20:40:37.634Z] === STARTING GEMINI QUIZ GENERATION === 
+[2026-08-17T20:40:37.637Z] Parameters: {
+  "prompt": "DevOps",
+  "difficulty": "Easy",
+  "numberOfQuestions": 10
+}
+[2026-08-17T20:40:37.641Z] ✅ API Key validated {
+  "length": 39
+}
+[2026-08-17T20:40:37.645Z] 📡 Initializing Gemini model: gemini-2.0-flash 
+[2026-08-17T20:40:37.649Z] 📤 Sending request to Gemini API... 
+[2026-08-17T20:41:00.208Z] ✅ Response received from Gemini {
+  "length": 2769
+}
+[2026-08-17T20:41:00.209Z] 🔍 Extracted JSON {
+  "preview": "{\"questions\":[{\"question\":\"What is the primary goal of adopting a DevOps culture in an organization?\",\"options\":[\"To improve collaboration and communi"
+}
+[2026-08-17T20:41:00.210Z] 📊 Received 10 questions from Gemini API 
+[2026-08-17T20:41:00.210Z] ✅ Generated 10 REAL AI questions from Gemini! 
+[2026-08-17T20:59:12.583Z] === STARTING GEMINI QUIZ GENERATION === 
+[2026-08-17T20:59:12.587Z] Parameters: {
+  "prompt": "AWS",
+  "difficulty": "Medium",
+  "numberOfQuestions": 10
+}
+[2026-08-17T20:59:12.591Z] ✅ API Key validated {
+  "length": 39
+}
+[2026-08-17T20:59:12.594Z] 📡 Initializing Gemini model: gemini-2.0-flash 
+[2026-08-17T20:59:12.598Z] 📤 Sending request to Gemini API... 
+[2026-08-17T20:59:31.409Z] ✅ Response received from Gemini {
+  "length": 4777
+}
+[2026-08-17T20:59:31.413Z] 🔍 Extracted JSON {
+  "preview": "{\"questions\":[{\"question\":\"A company needs to store access logs in high availability for 7 days, archive them for 7 years for compliance, and retrieve"
+}
+[2026-08-17T20:59:31.417Z] 📊 Received 10 questions from Gemini API 
+[2026-08-17T20:59:31.420Z] ✅ Generated 10 REAL AI questions from Gemini! 
+[2026-08-18T12:45:21.150Z] === STARTING GEMINI QUIZ GENERATION === 
+[2026-08-18T12:45:21.155Z] Parameters: {
+  "prompt": "Java",
+  "difficulty": "Medium",
+  "numberOfQuestions": 10
+}
+[2026-08-18T12:45:21.158Z] ✅ API Key validated {
+  "length": 39
+}
+[2026-08-18T12:45:21.160Z] 📡 Initializing Gemini model: gemini-2.0-flash 
+[2026-08-18T12:45:21.164Z] 📤 Sending request to Gemini API... 
+[2026-08-18T12:46:03.023Z] ✅ Response received from Gemini {
+  "length": 3407
+}
+[2026-08-18T12:46:03.024Z] 🔍 Extracted JSON {
+  "preview": "{\"questions\":[{\"question\":\"What is the output of the following Java Stream API code snippet?\\n\\nList<String> list = Arrays.asList(\\\"a\\\", \\\"bb\\\", \\\"ccc"
+}
+[2026-08-18T12:46:03.025Z] 📊 Received 10 questions from Gemini API 
+[2026-08-18T12:46:03.025Z] ✅ Generated 10 REAL AI questions from Gemini! 
+[2026-08-18T13:38:30.446Z] === STARTING GEMINI QUIZ GENERATION === 
+[2026-08-18T13:38:30.451Z] Parameters: {
+  "prompt": "Java",
+  "difficulty": "Medium",
+  "numberOfQuestions": 10
+}
+[2026-08-18T13:38:30.455Z] ✅ API Key validated {
+  "length": 39
+}
+[2026-08-18T13:38:30.458Z] 📡 Initializing Gemini model: gemini-2.0-flash 
+[2026-08-18T13:38:30.463Z] 📤 Sending request to Gemini API... 
+[2026-08-18T13:39:00.022Z] ❌ Gemini API Error: {
+  "message": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1/models/gemini-3.6-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+}
+[2026-08-18T13:39:00.023Z] ⚠️ API FAILED: Using fallback quiz generation... 
+[2026-08-18T13:39:00.027Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "Java",
+  "difficulty": "Medium"
+}

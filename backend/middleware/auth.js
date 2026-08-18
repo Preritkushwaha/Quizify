@@ -19,11 +19,21 @@ exports.verifyFirebaseToken = async (req, res, next) => {
     let user = await User.findOne({ firebaseUid: decodedToken.uid });
     
     if (!user) {
-      user = await User.create({
-        firebaseUid: decodedToken.uid,
-        email: decodedToken.email,
-        name: decodedToken.name || 'User',
-      });
+      if (decodedToken.email) {
+        user = await User.findOne({ email: decodedToken.email });
+        if (user) {
+          user.firebaseUid = decodedToken.uid;
+          await user.save();
+        }
+      }
+
+      if (!user) {
+        user = await User.create({
+          firebaseUid: decodedToken.uid,
+          email: decodedToken.email,
+          name: decodedToken.name || 'User',
+        });
+      }
     }
     
     req.userId = user._id;

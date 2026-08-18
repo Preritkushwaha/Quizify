@@ -5080,3 +5080,1125 @@ User Anonymous joined quiz 69eb1c23ae51d959dc861ede
   ║   Socket.IO: ✅ Ready                 ║
   ╚═══════════════════════════════════════╝
   
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+
+🎯 AI Quiz Generation Request:
+   User ID: 69ea9303e41daa1d3a59e008
+   Topic: Java Language
+   Difficulty: Medium
+   Questions: 10
+
+=== STARTING OPENROUTER QUIZ GENERATION ===
+Parameters:
+❌ OpenRouter API Error:
+⚠️ FALLBACK: Using template-based quiz generation
+✅ Quiz created successfully
+   ID: 6a8369677cee0f9daed35be4
+   Created By: 69ea9303e41daa1d3a59e008
+   Questions: 10
+
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[ADMIN] Admin undefined joining quiz room: 6a8369677cee0f9daed35be4
+[ADMIN] No active session found, sending empty participants list
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 3 quizzes
+
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 3 quizzes
+
+❌ User disconnected:
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 3 quizzes
+
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 3 quizzes
+
+
+🎯 AI Quiz Generation Request:
+   User ID: 69ea9303e41daa1d3a59e008
+   Topic: Java Programming
+   Difficulty: Easy
+   Questions: 10
+
+=== STARTING OPENROUTER QUIZ GENERATION ===
+Parameters:
+❌ OpenRouter API Error:
+⚠️ FALLBACK: Using template-based quiz generation
+✅ Quiz created successfully
+   ID: 6a836d487cee0f9daed35c06
+   Created By: 69ea9303e41daa1d3a59e008
+   Questions: 10
+
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] Admin undefined joining quiz room: 6a836d487cee0f9daed35c06
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a836d487cee0f9daed35c06
+User Yash joined quiz 6a836d487cee0f9daed35c06
+[START_QUIZ] Request - quizId:
+[START_QUIZ] Quiz found - createdBy:
+[START_QUIZ] Quiz started successfully - totalDuration:
+❌ User disconnected:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a836d487cee0f9daed35c06
+User Yash joined quiz 6a836d487cee0f9daed35c06
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[END_QUIZ] Request - quizId:
+[END_QUIZ] Quiz found - createdBy:
+[END_QUIZ] Quiz ended successfully
+❌ User disconnected:
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] Admin undefined joining quiz room: 6a836d487cee0f9daed35c06
+[ADMIN] Sending 1 participants to admin
+[QUIZ_FETCH] Quiz found:
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+✅ User connected:
+✅ User connected:
+❌ User disconnected:
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ User connected:
+✅ MongoDB Connected Successfully
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ User connected:
+✅ MongoDB Connected Successfully
+❌ User disconnected:
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 1 quizzes
+
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 1 quizzes
+
+
+🎯 AI Quiz Generation Request:
+   User ID: 69ea9303e41daa1d3a59e008
+   Topic: DevOps
+   Difficulty: Easy
+   Questions: 10
+
+=== STARTING GEMINI QUIZ GENERATION ===
+Parameters:
+✅ API Key validated
+📡 Initializing Gemini model: gemini-2.0-flash
+📤 Sending request to Gemini API...
+✅ Response received from Gemini
+🔍 Extracted JSON
+📊 Received 10 questions from Gemini API
+✅ Generated 10 REAL AI questions from Gemini!
+✅ Quiz created successfully
+   ID: 6a8371dce72ea3e0b0c05bd7
+   Created By: 69ea9303e41daa1d3a59e008
+   Questions: 10
+
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[ADMIN] Admin undefined joining quiz room: 6a8371dce72ea3e0b0c05bd7
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a8371dce72ea3e0b0c05bd7
+User Yash joined quiz 6a8371dce72ea3e0b0c05bd7
+[START_QUIZ] Request - quizId:
+[START_QUIZ] Quiz found - createdBy:
+[START_QUIZ] Quiz started successfully - totalDuration:
+❌ User disconnected:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a8371dce72ea3e0b0c05bd7
+User Yash joined quiz 6a8371dce72ea3e0b0c05bd7
+❌ User disconnected:
+[QUIZ_FETCH] Fetching quiz by ID:
+✅ User connected:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+❌ User disconnected:
+[ADMIN] Admin undefined joining quiz room: 6a8371dce72ea3e0b0c05bd7
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] Sending 0 participants to admin
+[QUIZ_FETCH] Quiz found:
+❌ User disconnected:
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] Admin undefined joining quiz room: 6a8371dce72ea3e0b0c05bd7
+[ADMIN] Sending 0 participants to admin
+[QUIZ_FETCH] Quiz found:
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 1 quizzes
+
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 1 quizzes
+
+❌ User disconnected:
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 0 quizzes
+
+
+📚 Fetching Quizzes for User: 69ea9303e41daa1d3a59e008
+   Found: 0 quizzes
+
+
+🎯 AI Quiz Generation Request:
+   User ID: 69ea9303e41daa1d3a59e008
+   Topic: AWS
+   Difficulty: Medium
+   Questions: 10
+
+=== STARTING GEMINI QUIZ GENERATION ===
+Parameters:
+✅ API Key validated
+📡 Initializing Gemini model: gemini-2.0-flash
+📤 Sending request to Gemini API...
+✅ Response received from Gemini
+🔍 Extracted JSON
+📊 Received 10 questions from Gemini API
+✅ Generated 10 REAL AI questions from Gemini!
+✅ Quiz created successfully
+   ID: 6a837633e72ea3e0b0c05ffe
+   Created By: 69ea9303e41daa1d3a59e008
+   Questions: 10
+
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] Admin undefined joining quiz room: 6a837633e72ea3e0b0c05ffe
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+User Yash joined quiz 6a837633e72ea3e0b0c05ffe
+❌ User disconnected:
+❌ User disconnected:
+✅ User connected:
+❌ User disconnected:
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+✅ New user created on first login:
+
+🎯 AI Quiz Generation Request:
+   User ID: 6a845386b766d73bab06f7e8
+   Topic: Java
+   Difficulty: Medium
+   Questions: 10
+
+=== STARTING GEMINI QUIZ GENERATION ===
+Parameters:
+✅ API Key validated
+📡 Initializing Gemini model: gemini-2.0-flash
+📤 Sending request to Gemini API...
+✅ Response received from Gemini
+🔍 Extracted JSON
+📊 Received 10 questions from Gemini API
+✅ Generated 10 REAL AI questions from Gemini!
+✅ Quiz created successfully
+   ID: 6a84540bb766d73bab06f7ed
+   Created By: 6a845386b766d73bab06f7e8
+   Questions: 10
+
+✅ User connected:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a84540bb766d73bab06f7ed
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+❌ User disconnected:
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a84540bb766d73bab06f7ed
+[ADMIN] Sending 0 participants to admin
+❌ User disconnected:
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+
+🎯 AI Quiz Generation Request:
+   User ID: 6a845386b766d73bab06f7e8
+   Topic: Java
+   Difficulty: Medium
+   Questions: 10
+
+=== STARTING GEMINI QUIZ GENERATION ===
+Parameters:
+✅ API Key validated
+📡 Initializing Gemini model: gemini-2.0-flash
+📤 Sending request to Gemini API...
+❌ Gemini API Error:
+⚠️ API FAILED: Using fallback quiz generation...
+⚠️ FALLBACK: Using template-based quiz generation
+✅ Quiz created successfully
+   ID: 6a846074fc2c75705d8c74d5
+   Created By: 6a845386b766d73bab06f7e8
+   Questions: 10
+
+[QUIZ_FETCH] Fetching quiz by ID:
+✅ User connected:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a846074fc2c75705d8c74d5
+[START_QUIZ] Request - quizId:
+[START_QUIZ] Quiz found - createdBy:
+[START_QUIZ] Quiz started successfully - totalDuration:
+Quiz 6a846074fc2c75705d8c74d5 started by admin 6a845386b766d73bab06f7e8
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+❌ User disconnected:
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ User connected:
+✅ MongoDB Connected Successfully
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+✅ User connected:
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] No active session found, sending empty participants list
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+
+  ╔═══════════════════════════════════════╗
+  ║   🎯 Quizify Backend Server Started  ║
+  ╠═══════════════════════════════════════╣
+  ║   Port: 5000                      ║
+  ║   Environment: development          ║
+  ║   Socket.IO: ✅ Ready                 ║
+  ╚═══════════════════════════════════════╝
+  
+✅ MongoDB Connected Successfully
+
+📚 Fetching Quizzes for User: 6a845386b766d73bab06f7e8
+   Found: 2 quizzes
+
+[QUIZ_FETCH] Fetching quiz by ID:
+✅ User connected:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a84540bb766d73bab06f7ed
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[START_QUIZ] Request - quizId:
+[START_QUIZ] Quiz found - createdBy:
+[START_QUIZ] Quiz started successfully - totalDuration:
+Quiz 6a84540bb766d73bab06f7ed started by admin 6a845386b766d73bab06f7e8
+❌ User disconnected:
+✅ User connected:
+[END_QUIZ] Request - quizId:
+[END_QUIZ] Quiz found - createdBy:
+[END_QUIZ] Quiz ended successfully
+Quiz 6a84540bb766d73bab06f7ed ended by admin 6a845386b766d73bab06f7e8
+❌ User disconnected:
+✅ User connected:
+❌ User disconnected:
+✅ User connected:
+❌ User disconnected:
+
+📚 Fetching Quizzes for User: 6a845386b766d73bab06f7e8
+   Found: 2 quizzes
+
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] No active session found, sending empty participants list
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a846074fc2c75705d8c74d5
+[END_QUIZ] Request - quizId:
+[END_QUIZ] Quiz found - createdBy:
+[END_QUIZ] Quiz ended successfully
+Quiz 6a846074fc2c75705d8c74d5 ended by admin 6a845386b766d73bab06f7e8
+❌ User disconnected:
+
+📚 Fetching Quizzes for User: 6a845386b766d73bab06f7e8
+   Found: 2 quizzes
+
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a84540bb766d73bab06f7ed
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a84540bb766d73bab06f7ed
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] No active session found, sending empty participants list
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User Yash joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User P joined quiz 6a84540bb766d73bab06f7ed
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+✅ User connected:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+[QUIZ_BY_CODE] Fetching quiz by share code:
+[QUIZ_BY_CODE] Quiz found:
+User O joined quiz 6a84540bb766d73bab06f7ed
+
+📚 Fetching Quizzes for User: 6a845386b766d73bab06f7e8
+   Found: 2 quizzes
+
+
+📚 Fetching Quizzes for User: 6a845386b766d73bab06f7e8
+   Found: 2 quizzes
+
+
+📚 Fetching Quizzes for User: 6a845386b766d73bab06f7e8
+   Found: 2 quizzes
+
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[ADMIN] Admin 6a845386b766d73bab06f7e8 joining quiz room: 6a846074fc2c75705d8c74d5
+[QUIZ_FETCH] Fetching quiz by ID:
+[ADMIN] No active session found, sending empty participants list
+[ADMIN] No active session found, sending empty participants list
+[QUIZ_FETCH] Quiz found:
+[QUIZ_FETCH] Fetching quiz by ID:
+[QUIZ_FETCH] Quiz found:
+❌ User disconnected:
+❌ User disconnected:
+❌ User disconnected:
+❌ User disconnected:

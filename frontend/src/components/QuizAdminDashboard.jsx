@@ -24,6 +24,7 @@ const QuizAdminDashboard = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [timerPerQuestion, setTimerPerQuestion] = useState(30);
   const [showTimerSettings, setShowTimerSettings] = useState(false);
+  const [show1v1Questions, setShow1v1Questions] = useState(false);
 
   console.log('🔍 QuizAdminDashboard rendering - quizId:', quizId, 'user:', user?.email);
 
@@ -101,7 +102,7 @@ const QuizAdminDashboard = () => {
 
     // Admin joins the quiz room to receive broadcasts
     console.log('[ADMIN] Joining quiz room:', quizId);
-    socket.socket.emit('admin-join-quiz', { quizId, adminUserId: user?.uid });
+    socket.socket.emit('admin-join-quiz', { quizId, adminUserId: user?.id });
 
     socket.socket.on('participant-joined', handleParticipantJoined);
     socket.socket.on('participants-update', handleParticipantsUpdate);
@@ -147,12 +148,12 @@ const QuizAdminDashboard = () => {
       await quizAPI.startQuiz(quizId);
       setQuizStatus('active');
       if (socket?.socket) {
-        socket.socket.emit('start-quiz', { quizId, userId: user?.uid });
+        socket.socket.emit('start-quiz', { quizId, userId: user?.id });
       }
       toast.success('Quiz started!');
     } catch (error) {
       console.error('Error starting quiz:', error);
-      toast.error('Failed to start quiz');
+      toast.error(`Failed to start quiz: ${error.response?.data?.message || error.message}`);
     } finally {
       setIsStarting(false);
     }
@@ -164,7 +165,7 @@ const QuizAdminDashboard = () => {
       await quizAPI.endQuiz(quizId);
       setQuizStatus('completed');
       if (socket?.socket) {
-        socket.socket.emit('end-quiz', { quizId, userId: user?.uid });
+        socket.socket.emit('end-quiz', { quizId, userId: user?.id });
       }
       toast.success('Quiz ended!');
     } catch (error) {
@@ -291,48 +292,37 @@ const QuizAdminDashboard = () => {
 
               {/* Share Code Section */}
               <div className="border-t pt-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Share Quiz with Participants</h3>
+                <h3 className="font-semibold text-gray-900 mb-4">Invite Participants</h3>
                 
-                {/* Quiz ID */}
                 <div className="mb-4">
-                  <p className="text-xs text-gray-600 mb-2">Quiz ID (for manual joining):</p>
+                  <p className="text-sm text-gray-600 mb-2">Share this direct link with your participants. They only need to enter their name to join!</p>
                   <div className="flex gap-2 items-center">
-                    <div className="flex-1 bg-gray-100 p-3 rounded-lg font-mono text-sm text-gray-800 break-all">
-                      {quizId}
+                    <div className="flex-1 bg-indigo-50 p-4 rounded-lg font-mono text-sm text-indigo-900 break-all border-2 border-indigo-100">
+                      {window.location.origin}/join/{quiz.shareCode}
                     </div>
                     <button
                       onClick={() => {
-                        navigator.clipboard.writeText(quizId);
-                        toast.success('Quiz ID copied!');
+                        navigator.clipboard.writeText(`${window.location.origin}/join/${quiz.shareCode}`);
+                        toast.success('Invite link copied!');
                       }}
-                      className="px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 flex items-center gap-2 whitespace-nowrap"
+                      className="px-6 py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 flex items-center gap-2 whitespace-nowrap font-semibold shadow-md transition"
                     >
-                      <Copy size={18} />
-                      Copy ID
+                      <Copy size={20} />
+                      Copy Link
                     </button>
                   </div>
-                </div>
-
-                {/* Share Code */}
-                <div>
-                  <p className="text-xs text-gray-600 mb-2">Share Code (for quick joining):</p>
-                  <div className="flex gap-2 items-center">
-                    <div className="flex-1 bg-indigo-50 p-3 rounded-lg font-mono text-sm text-indigo-900 font-bold text-center">
-                      {quiz.shareCode}
+                  {quiz?.type === '1v1' && quizStatus === 'waiting' && (
+                    <div className="mt-4 pt-4 border-t border-indigo-100 flex items-center justify-between">
+                      <p className="text-sm text-gray-600">Want to participate in your own challenge?</p>
+                      <button
+                        onClick={() => window.open(`/join/${quiz.shareCode}`, '_blank')}
+                        className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow transition"
+                      >
+                        Join as Participant
+                      </button>
                     </div>
-                    <button
-                      onClick={copyShareCode}
-                      className="px-4 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 flex items-center gap-2 whitespace-nowrap"
-                    >
-                      {shareCodeCopied ? <Check size={18} /> : <Copy size={18} />}
-                      {shareCodeCopied ? 'Copied!' : 'Copy Code'}
-                    </button>
-                  </div>
+                  )}
                 </div>
-
-                <p className="text-xs text-gray-500 mt-3">
-                  💡 Share the code above, or give participants the Quiz ID to join. Make sure they enter it in the "Join a Quiz" section.
-                </p>
               </div>
             </div>
           </div>
@@ -427,6 +417,56 @@ const QuizAdminDashboard = () => {
                 <p className="text-sm text-gray-500">joined the quiz</p>
               </div>
             </div>
+          </div>
+
+          {/* Quiz Preview */}
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">Questions Preview</h2>
+              {quiz?.type === '1v1' && quizStatus !== 'completed' && (
+                <button
+                  onClick={() => setShow1v1Questions(!show1v1Questions)}
+                  className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 font-medium transition"
+                >
+                  {show1v1Questions ? 'Hide Questions' : 'Show Questions'}
+                </button>
+              )}
+            </div>
+            
+            {quiz?.type === '1v1' && quizStatus !== 'completed' && !show1v1Questions ? (
+              <div className="text-center py-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                <p className="text-gray-500 font-medium">Questions are hidden for 1v1 challenges to prevent cheating.</p>
+                <p className="text-sm text-gray-400 mt-2">Click 'Show Questions' if you need to preview them.</p>
+              </div>
+            ) : quiz.questions && quiz.questions.length > 0 ? (
+              <div className="space-y-4">
+                {quiz.questions.map((q, index) => (
+                  <div key={index} className="p-4 bg-gray-50 rounded-lg border-2 border-gray-100">
+                    <p className="font-semibold text-gray-900 mb-3">
+                      {index + 1}. {q.text}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {q.options.map((opt, optIndex) => (
+                        <div
+                          key={optIndex}
+                          className={`p-3 rounded-lg text-sm border-2 ${
+                            optIndex === q.correctAnswer
+                              ? 'bg-green-100 border-green-300 text-green-900 font-semibold'
+                              : 'bg-white border-gray-200 text-gray-700'
+                          }`}
+                        >
+                          <span className="font-bold mr-2">{String.fromCharCode(65 + optIndex)}.</span>
+                          {opt}
+                          {optIndex === q.correctAnswer && <span className="ml-2">✅</span>}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500">No questions found.</p>
+            )}
           </div>
 
           {/* Participants List */}

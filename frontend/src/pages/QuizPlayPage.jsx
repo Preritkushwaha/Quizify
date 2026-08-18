@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSearchParams, useParams, useNavigate } from 'react-router-dom'
-import { Trophy, ArrowLeft, Users } from 'lucide-react'
+import { Trophy, ArrowLeft, Users, Clock } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import toast from 'react-hot-toast'
 import { quizAPI, battleAPI, challengeAPI } from '../services/api'
@@ -10,10 +10,9 @@ import { useAuth } from '../context/AuthContext'
 const QuizPlayPage = () => {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { battleId, challengeId } = useParams()
-  const quizId = searchParams.get('quizId')
+  const { quizId } = useParams()
   const { user } = useAuth()
-  const { joinQuiz, submitAnswer, endQuiz, on } = useSocket()
+  const { joinQuiz, submitAnswer, emit, on } = useSocket()
 
   const [quiz, setQuiz] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -23,36 +22,55 @@ const QuizPlayPage = () => {
   const [score, setScore] = useState(0)
   const [participants, setParticipants] = useState([])
   const [scoreboard, setScoreboard] = useState([])
-  const [isBattle, setIsBattle] = useState(false)
-  const [isChallenge, setIsChallenge] = useState(false)
   const [actualQuizId, setActualQuizId] = useState(null)
+  const [timeLeft, setTimeLeft] = useState(30)
+
+  // Timer reset when question changes
+  useEffect(() => {
+    if (quiz && quiz.questions && quiz.questions.length > currentQuestionIndex) {
+      setTimeLeft(quiz.questions[currentQuestionIndex].timer || 30)
+    }
+  }, [currentQuestionIndex, quiz])
+
+  // Timer countdown
+  useEffect(() => {
+    if (!quiz || quizFinished || loading || timeLeft === null) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [currentQuestionIndex, quizFinished, loading, quiz]);
+
+  // Handle time out
+  useEffect(() => {
+    if (timeLeft === 0 && !quizFinished && !loading) {
+      handleAnswer(-1);
+    }
+  }, [timeLeft, quizFinished, loading]);
 
   useEffect(() => {
     if (quizId) {
-      setIsBattle(false)
-      setIsChallenge(false)
       setActualQuizId(quizId)
       loadQuiz()
-    } else if (battleId) {
-      setIsBattle(true)
-      setIsChallenge(false)
-      loadQuiz()
-    } else if (challengeId) {
-      setIsChallenge(true)
-      setIsBattle(false)
-      loadQuiz()
     }
-  }, [quizId, battleId, challengeId])
+  }, [quizId])
 
   // Setup socket AFTER quiz is loaded
   useEffect(() => {
     if (quiz && user) {
-      if (isBattle || isChallenge) {
-        console.log('🔌 Setting up socket with quizId:', quiz._id)
+      console.log('🔌 Setting up socket with quizId:', quiz._id)
         joinQuiz({
           quizId: quiz._id,
           username: user.name,
-          userId: user._id,
+          userId: user.id,
         })
 
         // Listen for participants update
@@ -78,37 +96,18 @@ const QuizPlayPage = () => {
           unsubScoreboard?.()
           unsubEnded?.()
         }
-      }
     }
-  }, [quiz, user, isBattle, isChallenge, joinQuiz, on])
+  }, [quiz, user, joinQuiz, on])
 
   const loadQuiz = async () => {
     setLoading(true)
     try {
-      let response = null
-      
       if (quizId) {
-        console.log('📚 Loading regular quiz:', quizId)
-        response = await quizAPI.getQuiz(quizId)
+        console.log('📚 Loading quiz:', quizId)
+        const response = await quizAPI.getQuiz(quizId)
         setQuiz(response.quiz)
-      } else if (battleId) {
-        console.log('🎮 Loading battle:', battleId)
-        response = await battleAPI.getById(battleId)
-        console.log('✅ Battle data:', response)
-        if (response.battle && response.battle.quizId) {
-          setQuiz(response.battle.quizId)
-        } else {
-          throw new Error('Quiz not found in battle data')
-        }
-      } else if (challengeId) {
-        console.log('🏆 Loading challenge:', challengeId)
-        response = await challengeAPI.getById(challengeId)
-        console.log('✅ Challenge data:', response)
-        if (response.challenge && response.challenge.quizId) {
-          setQuiz(response.challenge.quizId)
-        } else {
-          throw new Error('Quiz not found in challenge data')
-        }
+      } else {
+        throw new Error('No quiz ID provided')
       }
     } catch (error) {
       console.error('Error loading quiz:', error)
@@ -126,15 +125,17 @@ const QuizPlayPage = () => {
     const newAnswers = [...answers, optionIndex]
     setAnswers(newAnswers)
 
-    // For battles and challenges, emit answer via socket
-    if ((isBattle || isChallenge) && quiz) {
+    // Emit answer via socket
+    if (quiz) {
       console.log('🎯 Submitting answer for quiz:', quiz._id)
+      const maxTime = quiz.questions[currentQuestionIndex].timer || 30
+      const timeSpentSecs = maxTime - timeLeft
       submitAnswer({
         quizId: quiz._id,
-        participantId: user._id,
+        participantId: user.id,
         questionId: quiz.questions[currentQuestionIndex]._id,
         answer: optionIndex,
-        responseTime: 5000, // Can be enhanced with actual timer
+        responseTime: timeSpentSecs * 1000, 
         isCorrect: quiz.questions[currentQuestionIndex].correctAnswer === optionIndex,
       })
     }
@@ -148,12 +149,12 @@ const QuizPlayPage = () => {
       }).length
       setScore(correctCount)
       
-      // For multiplayer, wait for all participants or emit end-quiz
-      if (isBattle || isChallenge) {
-        endQuiz(quiz._id)
-      } else {
-        setQuizFinished(true)
-      }
+      // User has finished their questions
+      emit('quiz-completed-early', {
+        quizId: quiz._id,
+        timeTaken: 0 // Could calculate total time here
+      })
+      setQuizFinished(true)
     }
   }
 
@@ -245,9 +246,15 @@ const QuizPlayPage = () => {
                 Question {currentQuestionIndex + 1} of {totalQuestions}
               </p>
             </div>
-            <a href="/" className="text-white hover:text-purple-100 transition">
-              <ArrowLeft size={24} />
-            </a>
+            <div className="flex items-center gap-4">
+              <div className={`flex items-center gap-2 px-4 py-2 rounded-full font-bold text-lg ${timeLeft <= 5 ? 'bg-red-500 animate-pulse text-white' : 'bg-white text-purple-600'}`}>
+                <Clock size={24} />
+                <span>{timeLeft}s</span>
+              </div>
+              <a href="/" className="text-white hover:text-purple-100 transition">
+                <ArrowLeft size={24} />
+              </a>
+            </div>
           </div>
 
           {/* Progress Bar */}
@@ -258,8 +265,8 @@ const QuizPlayPage = () => {
             />
           </div>
           
-          {/* Show participants count for multiplayer */}
-          {(isBattle || isChallenge) && participants.length > 0 && (
+          {/* Show participants count */}
+          {participants.length > 0 && (
             <div className="mt-4 flex items-center gap-2 text-sm">
               <Users size={16} />
               <span>{participants.length} participant{participants.length !== 1 ? 's' : ''}</span>
@@ -267,8 +274,8 @@ const QuizPlayPage = () => {
           )}
         </div>
 
-        {/* Scoreboard for Multiplayer */}
-        {(isBattle || isChallenge) && scoreboard.length > 0 && (
+        {/* Scoreboard */}
+        {scoreboard.length > 0 && (
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
             <h3 className="text-lg font-bold text-gray-900 mb-4">Live Scoreboard</h3>
             <div className="space-y-2">
@@ -310,18 +317,7 @@ const QuizPlayPage = () => {
 
         {/* Navigation */}
         <div className="flex justify-between items-center">
-          <button
-            onClick={() => {
-              if (currentQuestionIndex > 0) {
-                setCurrentQuestionIndex(currentQuestionIndex - 1)
-                setAnswers(answers.slice(0, -1))
-              }
-            }}
-            disabled={currentQuestionIndex === 0}
-            className="px-6 py-3 border-2 border-purple-600 text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Previous
-          </button>
+          <div className="w-24"></div> {/* Empty spacer for alignment */}
 
           <p className="text-gray-600 font-medium">
             {currentQuestionIndex + 1} / {totalQuestions}

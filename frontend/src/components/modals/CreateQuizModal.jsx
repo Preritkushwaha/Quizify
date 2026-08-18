@@ -23,13 +23,41 @@ const CreateQuizModal = ({ onClose }) => {
     onClose();
   };
 
-  const handleAIGenerateClick = () => {
+  const handleAIGenerateClick = async () => {
     if (!user) {
       navigate('/login');
-    } else {
-      navigate('/home');
+      onClose();
+      return;
     }
-    onClose();
+
+    if (!aiTopic.trim()) {
+      toast.error('Please enter a quiz topic');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await quizAPI.generateAI({
+        topic: aiTopic,
+        difficulty: aiDifficulty,
+        numberOfQuestions: 10
+      });
+      
+      if (!response || !response.quiz || !response.quiz._id) {
+        toast.error('Invalid response from server. Please try again.');
+        setLoading(false);
+        return;
+      }
+      
+      toast.success('AI Quiz generated successfully!');
+      setTimeout(() => {
+        navigate(`/quiz-admin-dashboard/${response.quiz._id}`);
+        onClose();
+      }, 500);
+    } catch (err) {
+      toast.error(err.message || 'Failed to generate AI quiz.');
+      setLoading(false);
+    }
   };
 
 

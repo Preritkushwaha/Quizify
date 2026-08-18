@@ -10,7 +10,8 @@ const QuizParticipantWaitingRoom = () => {
   const { quizId, shareCode } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
-  const socket = useSocket();
+  const socketObj = useSocket();
+  const socket = socketObj.socket;
 
   const [quiz, setQuiz] = useState(null);
   const [participants, setParticipants] = useState([]);
@@ -47,9 +48,18 @@ const QuizParticipantWaitingRoom = () => {
 
         // Join the quiz via socket
         if (socket && quizData) {
-          const userName = user?.displayName || user?.email?.split('@')[0] || 'Anonymous';
+          const guestName = sessionStorage.getItem('guestQuizName');
+          const userName = guestName || user?.displayName || user?.email?.split('@')[0];
+          
+          if (!userName) {
+            console.log('[WAITING_ROOM] No username or guest name found, redirecting to quick join');
+            toast.error('Please enter your name to join');
+            navigate(shareCode ? `/join/${shareCode}` : '/');
+            return;
+          }
+
           console.log('[WAITING_ROOM] Emitting join-quiz for quizId:', quizData._id);
-          socket.emit('join-quiz', {
+          socketObj.emit('join-quiz', {
             quizId: quizData._id,
             userName,
             userId: user?.uid
@@ -77,7 +87,7 @@ const QuizParticipantWaitingRoom = () => {
 
     console.log('[WAITING_ROOM] Setting up socket event listeners');
 
-    socket.on('join-success', (data) => {
+    const offJoin = socketObj.on('join-success', (data) => {
       console.log('[WAITING_ROOM] Successfully joined quiz:', data);
       toast.success('You have joined the quiz!');
       
@@ -97,7 +107,7 @@ const QuizParticipantWaitingRoom = () => {
       }
     });
 
-    socket.on('participants-update', (data) => {
+    const offParticipants = socketObj.on('participants-update', (data) => {
       console.log('[WAITING_ROOM] Participants updated:', data);
       if (data.participants) {
         setParticipants(data.participants);
@@ -121,7 +131,7 @@ const QuizParticipantWaitingRoom = () => {
       }
     });
 
-    socket.on('quiz-started', (data) => {
+    const offStart = socketObj.on('quiz-started', (data) => {
       console.log('[WAITING_ROOM] Quiz started!', data);
       setQuizStatus('active');
       // Navigate to quiz play page after a short delay
@@ -137,16 +147,16 @@ const QuizParticipantWaitingRoom = () => {
       }, 1000);
     });
 
-    socket.on('error', (error) => {
+    const offError = socketObj.on('error', (error) => {
       console.error('[WAITING_ROOM] Socket error:', error);
       toast.error(error.message || 'An error occurred');
     });
 
     return () => {
-      socket.off('join-success');
-      socket.off('participants-update');
-      socket.off('quiz-started');
-      socket.off('error');
+      offJoin();
+      offParticipants();
+      offStart();
+      offError();
     };
   }, [socket, quizId, quiz]);
 

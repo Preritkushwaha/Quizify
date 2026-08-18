@@ -8,7 +8,7 @@ import { quizAPI, battleAPI } from '../../services/api';
 const BattleModal = ({ onClose }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [mode, setMode] = useState(''); // '' | 'create' | 'join'
+  const [mode, setMode] = useState(''); // '' | 'create' | 'choose-existing' | 'join'
   const [battleId, setBattleId] = useState('');
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [userQuizzes, setUserQuizzes] = useState([]);
@@ -17,7 +17,7 @@ const BattleModal = ({ onClose }) => {
 
   // Fetch user's quizzes when create mode is accessed
   useEffect(() => {
-    if (mode === 'create' && user) {
+    if (mode === 'choose-existing' && user) {
       fetchUserQuizzes();
     }
   }, [mode, user]);
@@ -40,13 +40,7 @@ const BattleModal = ({ onClose }) => {
     }
   };
 
-  const handleCreateBattle = async () => {
-    if (!user) {
-      navigate('/login');
-      onClose();
-      return;
-    }
-
+  const handleSelectExistingQuiz = async () => {
     if (!selectedQuiz) {
       toast.error('Please select a quiz');
       return;
@@ -54,49 +48,54 @@ const BattleModal = ({ onClose }) => {
 
     setLoading(true);
     try {
-      console.log('🚀 Creating battle for quiz:', selectedQuiz._id);
-      const response = await battleAPI.create({
-        quizId: selectedQuiz._id,
-      });
+      // Create a fresh duplicate of the quiz for the battle
+      const newQuizData = {
+        title: `Battle: ${selectedQuiz.title}`,
+        description: selectedQuiz.description || 'A Real-Time Battle',
+        difficulty: selectedQuiz.difficulty,
+        type: 'battle',
+        questions: selectedQuiz.questions.map(q => ({
+          text: q.text,
+          options: q.options,
+          correctAnswer: q.correctAnswer
+        }))
+      };
       
-      console.log('✅ Battle created:', response);
-      toast.success('Battle created! Code: ' + response.battle.battleCode);
+      const response = await quizAPI.create(newQuizData);
       
-      // Copy battle code to clipboard
-      navigator.clipboard.writeText(response.battle.battleCode);
-      toast.success('Battle code copied to clipboard!');
-      
-      console.log('📋 Navigating to battle:', response.battle.id);
+      toast.success('Battle initialized!');
       onClose();
-      // Navigate after closing modal
       setTimeout(() => {
-        navigate(`/battle/${response.battle.id}`);
+        navigate(`/quiz-admin-dashboard/${response.quiz._id}`);
       }, 300);
     } catch (err) {
-      console.error('❌ Error creating battle:', err);
-      toast.error(err.message || 'Failed to create battle');
+      console.error('❌ Error updating quiz:', err);
+      toast.error(err.message || 'Failed to initialize battle');
       setLoading(false);
     }
   };
 
   const handleJoinBattle = async () => {
     if (!battleId.trim()) {
-      toast.error('Please enter a valid battle code');
+      toast.error('Please enter a valid URL or Share Code');
       return;
     }
 
     setLoading(true);
+    // Extract share code if it's a full URL
+    let shareCode = battleId.trim();
     try {
-      const response = await battleAPI.join(battleId.trim());
-      toast.success('Joined battle successfully!');
-      navigate(`/battle/${response.battle._id}`);
-      onClose();
-    } catch (err) {
-      console.error('Error joining battle:', err);
-      toast.error(err.message || 'Failed to join battle');
-    } finally {
-      setLoading(false);
+      if (shareCode.includes('http')) {
+        const urlObj = new URL(shareCode);
+        const pathParts = urlObj.pathname.split('/');
+        shareCode = pathParts[pathParts.length - 1];
+      }
+    } catch (e) {
+      // Not a URL, use as is
     }
+
+    onClose();
+    navigate(`/join/${shareCode}`);
   };
 
   return (
@@ -158,6 +157,37 @@ const BattleModal = ({ onClose }) => {
             )}
           </div>
         ) : mode === 'create' ? (
+          // Create battle selection
+          <div className="space-y-4">
+            <button
+              onClick={() => setMode('')}
+              className="flex items-center gap-2 text-red-600 hover:text-red-700 font-medium mb-4 transition"
+            >
+              <ArrowLeft size={20} />
+              Back
+            </button>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Choose Creation Method</h3>
+            
+            <button
+              onClick={() => {
+                onClose();
+                navigate('/manual-builder?type=battle');
+              }}
+              className="w-full p-4 border-2 border-red-200 rounded-xl hover:border-red-500 hover:bg-red-50 transition-all text-left group"
+            >
+              <h4 className="text-lg font-bold text-gray-900">Create New Quiz</h4>
+              <p className="text-sm text-gray-600">Build a fresh quiz for this battle</p>
+            </button>
+
+            <button
+              onClick={() => setMode('choose-existing')}
+              className="w-full p-4 border-2 border-red-200 rounded-xl hover:border-red-500 hover:bg-red-50 transition-all text-left group"
+            >
+              <h4 className="text-lg font-bold text-gray-900">Choose from Existing</h4>
+              <p className="text-sm text-gray-600">Select a quiz you've already created</p>
+            </button>
+          </div>
+        ) : mode === 'choose-existing' ? (
           // Create battle - quiz selection
           <div className="space-y-4">
             <button
@@ -215,11 +245,11 @@ const BattleModal = ({ onClose }) => {
                 </div>
 
                 <button
-                  onClick={handleCreateBattle}
+                  onClick={handleSelectExistingQuiz}
                   disabled={!selectedQuiz || loading}
                   className="w-full py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition disabled:opacity-50 disabled:cursor-not-allowed mt-4"
                 >
-                  {loading ? 'Creating...' : 'Create Battle'}
+                  {loading ? 'Initializing...' : 'Select Quiz'}
                 </button>
               </>
             ) : (
@@ -246,11 +276,11 @@ const BattleModal = ({ onClose }) => {
             </button>
 
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Battle Code
+              Battle URL or Share Code
             </label>
             <input
               type="text"
-              placeholder="Enter battle code (e.g., BT123456)"
+              placeholder="Paste URL or Code here"
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none mb-4 transition"
               value={battleId}
               onChange={(e) => setBattleId(e.target.value.toUpperCase())}

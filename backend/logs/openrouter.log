@@ -37,3 +37,29 @@
   "topic": "DSA",
   "difficulty": "Medium"
 }
+[2026-08-17T20:04:55.497Z] === STARTING OPENROUTER QUIZ GENERATION === 
+[2026-08-17T20:04:55.506Z] Parameters: {
+  "prompt": "Java Language",
+  "difficulty": "Medium",
+  "numberOfQuestions": 10
+}
+[2026-08-17T20:04:55.515Z] ❌ OpenRouter API Error: {
+  "message": "OPENROUTER_API_KEY is not configured in .env"
+}
+[2026-08-17T20:04:55.522Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "Java Language",
+  "difficulty": "Medium"
+}
+[2026-08-17T20:21:28.176Z] === STARTING OPENROUTER QUIZ GENERATION === 
+[2026-08-17T20:21:28.180Z] Parameters: {
+  "prompt": "Java Programming",
+  "difficulty": "Easy",
+  "numberOfQuestions": 10
+}
+[2026-08-17T20:21:28.184Z] ❌ OpenRouter API Error: {
+  "message": "OPENROUTER_API_KEY is not configured in .env"
+}
+[2026-08-17T20:21:28.186Z] ⚠️ FALLBACK: Using template-based quiz generation {
+  "topic": "Java Programming",
+  "difficulty": "Easy"
+}

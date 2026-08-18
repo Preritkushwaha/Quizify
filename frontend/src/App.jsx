@@ -13,6 +13,7 @@ import QuizParticipantWaitingRoom from './components/QuizParticipantWaitingRoom'
 import DashboardPage from './pages/DashboardPage'
 import ProfilePage from './pages/ProfilePage'
 import HomePage from './pages/HomePage'
+import QuickJoinPage from './pages/QuickJoinPage'
 import { useAuth } from './hooks/useAuth'
 
 const LoadingSpinner = () => (
@@ -75,6 +76,7 @@ const App = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/" />} />
           <Route path="/signup" element={!user ? <SignupPage /> : <Navigate to="/" />} />
+          <Route path="/join/:shareCode" element={<QuickJoinPage />} />
           
           {/* Protected Routes */}
           <Route path="/home" element={user ? <HomePage /> : <Navigate to="/login" />} />
@@ -86,7 +88,7 @@ const App = () => {
           <Route path="/quiz-admin-dashboard/:quizId" element={user ? <QuizAdminDashboard /> : <Navigate to="/login" />} />
           <Route path="/quiz-waiting/:quizId" element={<QuizParticipantWaitingRoom />} />
           <Route path="/quiz-waiting-share/:shareCode" element={<QuizParticipantWaitingRoom />} />
-          <Route path="/quiz-play" element={<QuizPlayPage />} />
+          <Route path="/quiz-play/:quizId" element={<QuizPlayPage />} />
           <Route path="/battle/:battleId" element={<QuizPlayPage />} />
           <Route path="/challenge/:challengeId" element={<QuizPlayPage />} />
           
