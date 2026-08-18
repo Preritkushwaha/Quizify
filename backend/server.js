@@ -14,8 +14,6 @@ const authRoutes = require('./routes/auth');
 const quizRoutes = require('./routes/quiz');
 const resultRoutes = require('./routes/results');
 const logsRoutes = require('./routes/logs');
-const challengeRoutes = require('./routes/challenge');
-const battleRoutes = require('./routes/battle');
 
 const fs = require('fs');
 const path = require('path');
@@ -71,8 +69,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/results', resultRoutes);
 app.use('/api/logs', logsRoutes);
-app.use('/api/challenge', challengeRoutes);
-app.use('/api/battle', battleRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

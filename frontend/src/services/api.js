@@ -80,20 +80,4 @@ export const resultsAPI = {
   getLeaderboard: (quizId) => api.get(`/results/leaderboard/${quizId}`),
 }
 
-// Challenge APIs
-export const challengeAPI = {
-  create: (data) => api.post('/challenge/create', data),
-  getById: (challengeId) => api.get(`/challenge/${challengeId}`),
-  join: (challengeId) => api.post(`/challenge/join/${challengeId}`),
-  getUserChallenges: () => api.get('/challenge/user/challenges'),
-}
-
-// Battle APIs
-export const battleAPI = {
-  create: (data) => api.post('/battle/create', data),
-  getById: (battleId) => api.get(`/battle/${battleId}`),
-  join: (battleId) => api.post(`/battle/join/${battleId}`),
-  getUserBattles: () => api.get('/battle/user/battles'),
-}
-
 export default api
