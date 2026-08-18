@@ -50,7 +50,8 @@ npm run dev
 - AI-powered quiz generation using Gemini API
 - Real-time quiz participation with Socket.io
 - Custom quiz builder
-- Cheating detection
+- 1v1 Challenges and Real-Time Multiplayer Battles
+- Strict time limits and anti-cheat mechanisms
 - Leaderboard and scoring system
 - User authentication with Firebase
 - Live results and scoreboard
