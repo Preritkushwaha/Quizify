@@ -7,7 +7,6 @@ import SignupPage from './pages/SignupPage'
 import ManualBuilderPage from './pages/ManualBuilderPage'
 import QuizPlayPage from './pages/QuizPlayPage'
 import MyQuizzesPage from './pages/MyQuizzesPage'
-import AdminDashboardTestPage from './pages/AdminDashboardTestPage'
 import QuizAdminDashboard from './components/QuizAdminDashboard'
 import QuizParticipantWaitingRoom from './components/QuizParticipantWaitingRoom'
 import DashboardPage from './pages/DashboardPage'
@@ -84,7 +83,6 @@ const App = () => {
           <Route path="/dashboard" element={user ? <DashboardPage /> : <Navigate to="/login" />} />
           <Route path="/manual-builder" element={user ? <ManualBuilderPage /> : <Navigate to="/login" />} />
           <Route path="/my-quizzes" element={user ? <MyQuizzesPage /> : <Navigate to="/login" />} />
-          <Route path="/admin-test" element={user ? <AdminDashboardTestPage /> : <Navigate to="/login" />} />
           <Route path="/quiz-admin-dashboard/:quizId" element={user ? <QuizAdminDashboard /> : <Navigate to="/login" />} />
           <Route path="/quiz-waiting/:quizId" element={<QuizParticipantWaitingRoom />} />
           <Route path="/quiz-waiting-share/:shareCode" element={<QuizParticipantWaitingRoom />} />
